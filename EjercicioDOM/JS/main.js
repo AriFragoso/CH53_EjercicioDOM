@@ -32,6 +32,9 @@ btnMostrar.addEventListener("click", function(event){
     event.preventDefault(); //no hagas lo que haces por defecto
     console.log("Boton btnModificar presionado");
 
+    //AGREGAR ELEMENTOS CREANDO VARIABLES 
+    // FORMA 1
+
     let element = document.createElement("li");
     element.innerText="Otro item"; //Agrega  otro elemneto dentro de la lista 
     element.classList.add("list-group-item"); //Agregamos formato al elemento,que este dentro de un cuadro 
@@ -44,5 +47,27 @@ btnMostrar.addEventListener("click", function(event){
     listas.item(0).prepend(element2);
     listas.item(0).append(element3);
     listas.item(0).after(element4);
+
+    //AGREGAR ELEMENTOS CREANDO VARIABLES 
+    // FORMA 2
+
+    let element5 = element.cloneNode(true);
+    let element6 = element.cloneNode(true);
+
+    listas.item(1).insertAdjacentElement("afterbegin", element5);
+    listas.item(1).insertAdjacentElement("beforeend", element6);
+
+    // AGREGAR ELEMENTOS SIN VARIABLES
+    listas.item(1).insertAdjacentHTML("beforebegin",
+        `<li class="list-group-item">beforebegin item</li>`);
+
+    listas.item(1).insertAdjacentHTML("afterbegin",
+        `<li class="list-group-item">afterbegin item</li>`);
+
+    listas.item(1).insertAdjacentHTML("beforeend",
+        `<li class="list-group-item">beforeend item</li>`);
+    
+    listas.item(1).insertAdjacentHTML("afterend",
+        `<li class="list-group-item">afterend item</li>`);
     
 });
