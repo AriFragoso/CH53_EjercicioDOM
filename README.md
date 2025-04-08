@@ -17,4 +17,4 @@ git commit -m
 git push origin main
 ```
 >Vista previa del index.html
-![Index](./index.png)
+![Index](https://raw.githubusercontent.com/AriFragoso/CH53_EjercicioDOM/refs/heads/main/index.png)
