@@ -14,4 +14,5 @@ Código para actualizar el repositorio:
 git status
 git add .
 git commit -m
-git log 
+git push origin main
+```
