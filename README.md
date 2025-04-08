@@ -16,3 +16,5 @@ git add .
 git commit -m
 git push origin main
 ```
+>Vista previa del index.html
+![Index](./index.png)
