@@ -31,5 +31,18 @@ function modifica(){
 btnMostrar.addEventListener("click", function(event){
     event.preventDefault(); //no hagas lo que haces por defecto
     console.log("Boton btnModificar presionado");
+
+    let element = document.createElement("li");
+    element.innerText="Otro item"; //Agrega  otro elemneto dentro de la lista 
+    element.classList.add("list-group-item"); //Agregamos formato al elemento,que este dentro de un cuadro 
+
+    let element2 = element.cloneNode(true); //.cloneNode: Clona el mismo contenido dentro de otra variable  
+    let element3 = element.cloneNode(true);
+    let element4 = element.cloneNode(true);
+    
+    listas.item(0).before(element);
+    listas.item(0).prepend(element2);
+    listas.item(0).append(element3);
+    listas.item(0).after(element4);
     
 });
