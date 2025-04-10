@@ -10,6 +10,11 @@ let otroElemento = document.querySelector("ul>il"); //selector para CSS, toma el
 let otrosElemento = document.querySelectorAll("ul>il"); //todos
 let btnMostrar = document.getElementById("btnMostrar");
 
+let txtRFC = document.getElementById("txtRFC");
+let txtCURP = document.getElementById("txtCURP");
+let txtTelefono = document.getElementById("txtTelefono");
+
+
 console.log(listas.length);//2
 console.log(listas.item(1));
 
@@ -71,3 +76,37 @@ btnMostrar.addEventListener("click", function(event){
         `<li class="list-group-item">afterend item</li>`);
     
 });
+
+//Se ejecita cuando termina de cargar todos loselementps de la página
+window.addEventListener("load", function(event){
+    console.log("Se terminó de cargar la página");
+}); //load
+
+
+// Convertir de minusc a MAYUSC 
+//blur -> cuando se sale del campo (pierde el foco)
+/*txtRFC.addEventListener("blur", function (event){
+    event.preventDefault();
+    txtRFC.value = txtRFC.value.toUpperCase();
+}); 
+
+txtCURP.addEventListener("blur", function (event){
+    event.preventDefault();
+    txtCURP.value = txtCURP.value.toUpperCase();
+}); */
+
+//Automatizar los eventos de arriba con una FUNCIÓN para poderlo hacer mas facil y rápido para varios campos 
+function txtToUpper(event){
+    event.preventDefault();
+    event.target.value = event.target.value.trim().toUpperCase(); //terget: Se aplica el evento al compo donde esta
+                                                                //trim: No toma los espacios 
+}
+txtRFC.addEventListener("blur", txtToUpper);
+txtCURP.addEventListener("blur", txtToUpper);
+
+
+txtTelefono.addEventListener("blur", function (event){
+    event.preventDefault();
+    txtTelefono.value = txtTelefono.value.trim().slice(0,10);
+}); //txtTelefono
+
